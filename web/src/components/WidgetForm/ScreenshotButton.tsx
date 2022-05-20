@@ -4,21 +4,21 @@ import { useState } from "react"
 import { Loading } from "./Loading"
 
 interface ScreenshotButtonProps {
-  screenshot: string | null;
-  onScreenshotTook: (screenshot: string | null) => void;
+  screenshot: string | null
+  onScreenshotTook: (screenshot: string | null) => void
 }
 
 export function ScreenshotButton({ screenshot, onScreenshotTook }: ScreenshotButtonProps) {
   const [isTakingScreenshot, setIsTakingScreenshot] = useState(false);
 
   async function handleTakeScreenshot() {
-    setIsTakingScreenshot(true);
+    setIsTakingScreenshot(true)
 
-    const canvas = await html2canvas(document.querySelector('html')!);
-    const base64image = canvas.toDataURL('image/png');
+    const canvas = await html2canvas(document.querySelector('html')!)
+    const base64image = canvas.toDataURL('image/png')
 
-    onScreenshotTook(base64image);
-    setIsTakingScreenshot(false);
+    onScreenshotTook(base64image)
+    setIsTakingScreenshot(false)
   }
 
   if (screenshot) {
