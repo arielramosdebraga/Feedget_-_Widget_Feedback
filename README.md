@@ -1,5 +1,6 @@
-<h3>Projeto WEB - ReactJS / Typescript<br>
-	Feedget - Feedback Widget<h3>
+#Feedget - Feedback Widget
+##Projeto desenvolvimento do evento gratuito Rockeseat - NLW Return
+<h3>Projeto WEB - ReactJS / Typescript<h3>
 
 npm create vite@latest<br>
 <a href="https://tailwindcss.com/docs/installation">Tailwind CSS</a><br>
@@ -7,6 +8,7 @@ npm install @headlessui/react - acessibilidade<br>
 npm install -D @tailwindcss/forms<br>
 npm install --save-dev tailwind-scrollbar<br>
 npm install html2canvas<br>
+npm install axios<br>
 
 npm run dev<br><br>
 
@@ -32,23 +34,42 @@ Servidores de envio de e-mail - mailtrap.io<br><br>
 
 Teste Unitário com Jest<br>
 npm i jest -D<br>
+npm i @types/jest<br><br>
 npx jest --init<br>
 npm run test<br><br>
 
 npm i ts-node -D<br><br>
 
+compilation and bundling<br>
 ts-jest muito lento<br>
 babel lento<br>
-swc.rs melhor<br><br>
+swc.rs melhor<br>
+npm i -D jest @swc/core @swc/jest<br><br>
 
 Controle de acesso aos serviços<br>
 npm i cors<br>
 npm i @types/cors -D<br>
-npm i -D jest @swc/core @swc/jest<br>
-npm i @types/jest<br><br>
 
 <h3>Criação do projeto - Mobile - REACT NATIVE</h3>
 
 npm install -g expo-cli<br>
 expo init mobile<br>
-expo start<br>
+expo start<br><br>
+
+estrutura styles = comando rnso<br>
+index.tsx - comando rnbc<br><br>
+
+expo install expo-font @expo-google-fonts/inter<br>
+expo install expo-splash-screen<br>
+
+npm install --save phosphor-react-native<br>
+npm install react-native-svg<br>
+npm install react-native-iphone-x-helper<br>
+
+expo install @gorhom/bottom-sheet@^4<br>
+expo install react-native-reanimated<br>
+expo install react-native-gesture-handler<br>
+expo install react-native-view-shot<br>
+
+npm install axios<br>
+expo install expo-file-system
