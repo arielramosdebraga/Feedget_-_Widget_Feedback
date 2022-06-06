@@ -38,7 +38,8 @@ export class SubmitFeedbackService {
       subject: 'Novo feedback',
       body: [
         `<p>Tipo do feedback: ${type} </p>`,
-        `<p>Comentário: ${comment}</p>`
+        `<p>Comentário: ${comment}</p>`,
+        `<p>Screenshot: <img src="${screenshot}" width="250"/></p>`,
       ].join('\n')
     })
   }
