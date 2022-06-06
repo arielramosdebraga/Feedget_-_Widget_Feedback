@@ -1,6 +1,6 @@
-#Feedget - Feedback Widget
-##Projeto desenvolvimento do evento gratuito Rockeseat - NLW Return
-<h3>Projeto WEB - ReactJS / Typescript<h3>
+<h2>Feedget - Feedback Widget</h2>
+<p>Projeto desenvolvimento do evento gratuito Rockeseat - NLW Return</p>
+<h3>Projeto WEB - ReactJS / Typescript</h3>
 
 npm create vite@latest<br>
 <a href="https://tailwindcss.com/docs/installation">Tailwind CSS</a><br>
