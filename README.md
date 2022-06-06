@@ -1,6 +1,6 @@
 <h2>Feedget - Feedback Widget</h2>
 <p>Projeto desenvolvimento do evento gratuito Rockeseat - NLW Return</p>
-<h3>Projeto WEB - ReactJS / Typescript</h3>
+<h3><a href="https://feedget-widget-feedback-web.vercel.app/">Projeto WEB - ReactJS / Typescript</a></h3>
 
 npm create vite@latest<br>
 <a href="https://tailwindcss.com/docs/installation">Tailwind CSS</a><br>
