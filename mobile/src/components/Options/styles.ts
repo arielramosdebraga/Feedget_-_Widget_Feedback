@@ -16,5 +16,9 @@ export const styles = StyleSheet.create({
     marginBottom: 32,
     fontFamily: theme.fonts.medium,
     color: theme.colors.text_primary
+  },
+  image: {
+    width: 40,
+    height: 40
   }
 })

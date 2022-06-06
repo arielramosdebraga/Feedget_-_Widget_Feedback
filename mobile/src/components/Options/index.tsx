@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, View } from 'react-native'
+import { Pressable, Text, View } from 'react-native'
 
 import { feedbackTypes } from '../../utils/feedbackTypes'
 import { Copyright } from '../Copyright'
@@ -21,12 +21,15 @@ export function Options({onFeedbackTypeChanged}: Props) {
       <View style={styles.options}>
         {
           Object.entries(feedbackTypes).map(([key, value]) => (
-            <Option
+            <Pressable
               key={key}
-              title={value.title}
-              image={value.image}
               onPress={() => onFeedbackTypeChanged(key as FeedbackType)}
-            />
+            >
+              <Option
+                title={value.title}
+                image={value.image}
+              />
+            </Pressable>
           ))
         }
       </View>

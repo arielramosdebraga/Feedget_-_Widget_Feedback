@@ -1,22 +1,28 @@
 import React, { useState } from 'react'
 import { Image, Text, TouchableOpacity, View } from 'react-native'
 import { ArrowLeft } from 'phosphor-react-native'
+import { captureScreen } from 'react-native-view-shot'
+import { TextInput } from 'react-native-gesture-handler'
+import * as FileSystem from 'expo-file-system'
 
 import { styles } from './styles'
 import { theme } from '../../theme';
-import { FeedbackType } from '../../components/Widget';
-import { feedbackTypes } from '../../utils/feedbackTypes';
-import { TextInput } from 'react-native-gesture-handler';
-import { ScreenshotButton } from '../ScreenshotButton';
-import { Button } from '../Button';
-import { captureScreen } from 'react-native-view-shot';
+import { FeedbackType } from '../../components/Widget'
+import { feedbackTypes } from '../../utils/feedbackTypes'
+import { ScreenshotButton } from '../ScreenshotButton'
+import { Button } from '../Button'
+import { api } from '../../libs/api'
 
 interface Props {
-  feedbackType: FeedbackType;
+  feedbackType: FeedbackType
+  onFeedbackCanceled: () => void
+  onFeedbackSent: () => void
 }
 
-export function Form({ feedbackType }: Props) {
+export function Form({ feedbackType, onFeedbackCanceled, onFeedbackSent }: Props) {
+  const [isSendFeedback, setIsSendFeedback] = useState(false)
   const [screenshot, setScreenshot] = useState<string | null>(null)
+  const [comment, setComment] = useState('')
 
   const feedbackTypeInfo = feedbackTypes[feedbackType]
 
@@ -32,10 +38,32 @@ export function Form({ feedbackType }: Props) {
     setScreenshot(null)
   }
 
+  async function handleSendFeedback() {
+    if(isSendFeedback) {
+      return
+    }
+
+    setIsSendFeedback(true);
+    const screenshotBase64 = screenshot && await FileSystem.readAsStringAsync(screenshot, { encoding: 'base64' })
+
+    try {
+      await api.post('/feedbacks', {
+        type: feedbackType,
+        screenshot: `data:image/png;base64, ${screenshotBase64}`,
+        comment
+      })
+
+      onFeedbackSent()
+    } catch (error) {
+      console.log(error)
+      setIsSendFeedback(false)
+    }
+  }
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={onFeedbackCanceled}>
           <ArrowLeft 
             size={24}
             weight="bold"
@@ -59,6 +87,8 @@ export function Form({ feedbackType }: Props) {
         style={styles.input}
         placeholder="Algo não está funcionando bem? Queremos corrigir. Conte com detalhes o que está acontecendo..."
         placeholderTextColor={theme.colors.text_secondary}
+        autoCorrect={false}
+        onChangeText={setComment}
       />
 
       <View style={styles.footer}>
@@ -69,7 +99,8 @@ export function Form({ feedbackType }: Props) {
         />
 
         <Button 
-          isLoading={false}
+          onPress={handleSendFeedback}
+          isLoading={isSendFeedback}
         />
       </View>
     </View>
