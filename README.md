@@ -72,4 +72,9 @@ expo install react-native-gesture-handler<br>
 expo install react-native-view-shot<br>
 
 npm install axios<br>
-expo install expo-file-system
+expo install expo-file-system<br><br>
+
+DEPLOY<br>
+
+web - vercel.com<br>
+backend - railway.app
