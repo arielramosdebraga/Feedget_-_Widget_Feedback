@@ -143,7 +143,7 @@ Nesta seção haverão instruções caso você queira editar o projeto, explican
 
 ### Publicação
 
-[Site da Aplicação Web](https://event-plataform-sandy.vercel.app/);
+[Site da Aplicação Web](https://feedget-widget-feedback-or49ph2pf-arielramosdebraga.vercel.app/);
 
 ## Contribuição
 
