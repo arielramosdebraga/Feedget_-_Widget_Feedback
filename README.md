@@ -62,88 +62,24 @@ Antes de seguirmos para as configurações, é que a versão do Node que você t
 
 [Node 14.9.3 (LTS)](https://nodejs.org/download/release/v14.19.3/)
 
-### Estrutura de Arquivos
+### Projetos
 
-A estrutura de arquivos está da seguinte maneira:
+Segue abaixo caminho do README.md dos projetos:
 
 ```bash
-feedget/web
-├── src/
-│   ├── assets/
-│   │   ├── bug.svg
-│   │   ├── check.svg
-│   │   ├── idea.svg
-│   │   ├── thought.svg
-│   ├── components/
-│   │   └── WidgetForm/
-│   │       └── Steps/
-│   │           └── FeedbackContentStep.tsx
-│   │           └── FeedbackSuccessStep.tsx
-│   │           └── FeedbackTypeStep.tsx
-│   │       └── index.tsx
-│   │       └── Loading.tsx
-│   │       └── ScreenshotButton.tsx
-│   │   └── CloseButton.tsx
-│   │   └── Widget.tsx
-│   ├── lib/
-│   │   └── api.ts
-│   ├── App.tsx
-│   ├── global.css
-│   ├── main.tsx
-│   ├── vite-env.d.ts
-├── .gitignore
-├── index.html
-├── package.json
-├── postcss.config.js
-├── tailwind.config.js
-├── tsconfig.js
-├── tsconfig.node.js
-├── vite.config.ts
-└── README.md
+feedget/
+├── mobile/
+  └── [README.md](https://github.com/arielramosdebraga/feedget/tree/main/mobile)
+├── server/
+  └── [README.md](https://github.com/arielramosdebraga/feedget/tree/main/server)
+├── web/
+  └── [README.md](https://github.com/arielramosdebraga/feedget/tree/main/web)
 ```
-
-Serão explicados os arquivos e diretórios na seção de [Edição](#edição).
-
-### Instalação
-
-1. Para instalar e utilizar esse projeto o processo é bem simples, basta clonar o repositório e executar o comando dentro da pasta:
-
-```sh
-npm install
-```
-
-2. Para executar a aplicação, basta executar o comando abaixo.
-
-```sh
-npm run dev
-```
-
-3. Acesse a url, demonstrada no terminal
-
-[Visualização](http://localhost:3000/)
-
----
-
-### Edição
-
-Nesta seção haverão instruções caso você queira editar o projeto, explicando para que os diretórios são utilizados e também os arquivos de configuração.
-
-- **src** - Diretório contendo todos os arquivos da aplicação, é criado um diretório `src` para que o código da aplicação possa ser isolado em um diretório e facilmente portado para outros projetos, se necessário;
-  - **assets** - Diretório para armazenar imagens em geral que possam ser utilizadas na aplicação, esse diretório pode ser renomeado para `assets` e dentro de `assets` criar um novo diretório para guardar somente as imagens, assim é possível ter um diretório para guardar todo tipo de arquivo, e não apenas imagens;
-
-  - **components** - Diretório onde ficam as páginas (telas) da aplicação, como forma de padronização e boas práticas toda página fica dentro de um diretório com seu nome;
-
-  - **lib** - Diretório onde serão criados os arquivos relacionados a serviços utilizados na aplicação, por exemplo, requisições HTTP, autenticação com Firebase ou qualquer outro serviço que for utilizado;
-
-    - **api.ts** - Arquivo com a configuração da biblioteca Axios para envio de requisições HTTP, o endereço que vem configurado por padrão é para a API do Github;
-
-  - **index.js** - Arquivo responsável por centralizar o código do diretório `src`, nele é inserido o HOC Provider do `react-redux` que é o responsável por disponilizar o state global para a aplicação, e dentro do Provider são chamadas as rotas tal como qualquer outra configuração que precise ser executada na inicialização da aplicação, ele é como um _Entry Point_ do diretório `src`;
-
-- **package.json** - Diferente dos projetos comuns, esse arquivo tem as configurações necessárias para a publicação do Template no NPM, para saber mais sobre isso veja a seção abaixo.
 
 ### Publicação
 
 [Site da Aplicação Web](https://feedget-widget-feedback-or49ph2pf-arielramosdebraga.vercel.app/);
+[Site do Servidor](https://feedget-widgetfeedback-production.up.railway.app/);
 
 ## Contribuição
 
