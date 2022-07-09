@@ -34,17 +34,17 @@ Segue abaixo caminho do README.md dos projetos:
 ```bash
 feedget/
 ├── mobile/
-  └── [README.md](https://github.com/arielramosdebraga/feedget/tree/main/mobile)
+  └── README.md
 ├── server/
-  └── [README.md](https://github.com/arielramosdebraga/feedget/tree/main/server)
+  └── README.md
 ├── web/
-  └── [README.md](https://github.com/arielramosdebraga/feedget/tree/main/web)
+  └── README.md
 ```
 
 ## Publicação
 
-[Site da Aplicação Web](https://feedget-widget-feedback-or49ph2pf-arielramosdebraga.vercel.app/);
-[Site do Servidor](https://feedget-widgetfeedback-production.up.railway.app/);
+- [Site da Aplicação Web](https://feedget-widget-feedback-or49ph2pf-arielramosdebraga.vercel.app/);
+- [Site do Servidor](https://feedget-widgetfeedback-production.up.railway.app/);
 
 ## Contribuição
 
